@@ -93,7 +93,12 @@ function App() {
   return (
     <div className="app">
       <h1>Inspeccionemos</h1>
-      <QrReader delay={300} onError={handleError} onResult={handleScan} />
+      <QrReader
+        delay={300}
+        onError={handleError}
+        onResult={handleScan}
+        constraints={{ facingMode: "environment" }}
+      />
       <div className="grid-section">
         <div className="grid">{Object.entries(images).map(renderCell)}</div>
       </div>
